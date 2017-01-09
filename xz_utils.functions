@@ -2,7 +2,7 @@
 # Copyright © 2016 The developers of libertine linux's package xz_utils. See the COPYRIGHT file in the top-level directory of this distribution and at https://raw.githubusercontent.com/libertine-linux-packages/xz_utils/master/COPYRIGHT.
 
 
-variant=upstram
+variant=upstream
 
 depends build_ccache
 build_needs ccache
