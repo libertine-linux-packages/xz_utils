@@ -38,7 +38,7 @@ case "$package" in
 		
 		libertine_compile_build_xz_utils_xz()
 		{
-			_libertine_compile_xz_utils_internal false "$libertine_build" "$(libertine_public_outputBuildSysrootPath)"
+			_libertine_compile_xz_utils_internal false "$(libertine_public_outputBuildSysrootPath)"
 		}
 		
 		build_provides lzmadec lzmainfo xz xzdec
@@ -51,7 +51,7 @@ case "$package" in
 		
 		libertine_compile_xz_utils()
 		{
-			_libertine_compile_xz_utils_internal true "$libertine_host" "$(libertine_public_outputHostSysrootPath)"
+			_libertine_compile_xz_utils_internal true "$(libertine_public_outputHostSysrootPath)"
 		}
 	;;
 	
@@ -61,8 +61,7 @@ esac
 _libertine_compile_xz_utils_internal()
 {
 	local needsStrip="$1"
-	local target="$2"
-	local sysroot="$3"
+	local sysroot="$2"
 	
 	pushd "$(libertine_public_sourcePath)"
 		
@@ -85,7 +84,7 @@ _libertine_compile_xz_utils_internal()
 		local executableToStrip
 		for executableToStrip in lzmadec lzmainfo xz xzdec
 		do
-			"$target"-strip "$sysroot"/usr/bin/"$executableToStrip"
+			libertine_public_stripAndSecureBinary "$sysroot"/usr/bin/"$executableToStrip"
 		done	
 	else
 		mkdir -m 0755 -p "$(libertine_public_outputBuildSysrootPath)"/usr
