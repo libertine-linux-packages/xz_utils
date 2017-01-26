@@ -48,6 +48,9 @@ case "$package" in
 
 		depends build_musl_cross_make_host
 		build_needs "$libertine_host"-cc "$libertine_host"-gcc "$libertine_host"-ar "$libertine_host"-ld "$libertine_host"-ranlib "$libertine_host"-strip
+
+		depends build_paxctl
+		build_needs paxctl
 		
 		libertine_compile_xz_utils()
 		{
