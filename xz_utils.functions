@@ -27,6 +27,7 @@ build_needs m4
 
 depends build_busybox
 build_needs expr install sort
+depends build_netbsd_src_sleep
 build_needs ls sleep
 build_needs mkdir ln
 
