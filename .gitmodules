@@ -1,3 +1,5 @@
 [submodule "upstream"]
 	path = upstream
-	url = https://github.com/jsejcksn/xz-utils.git
+	url = https://github.com/libertine-linux-clones/xz-utils.git
+	branch = master
+	libertine-linux-upstream = https://github.com/jsejcksn/xz-utils.git
